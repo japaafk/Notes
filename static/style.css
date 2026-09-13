@@ -1,0 +1,30 @@
+/* CONTAINER DAS COLUNAS */ 
+.board {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;    
+    border: 2px solid #999;
+    height: 300px;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+}
+
+.column {
+    flex: 1;
+    background: #e9e9ec;
+    border-radius: 12px;
+    padding: 12px;
+    min-height: 120px;
+}
+
+.column-header {
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    padding: 6px 0 12px 0;
+    color: #333;
+}
+
+.stack {
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notinhas</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>Notinhas</h1>
+    <hr>
+    <h2>Anotações</h2>
+    <form action="/register" method="post">
+        <input autocomplete="off" autofocus placeholder="Deveres, obrigações, etc." type="text">
+        <select>
+            <option>Aula</option>
+            <option>Lazer</option>
+            <option>Pessoal</option>
+        </select>
+        <input type="submit" name="notes">
+    </form> 
+    <br>  
+    <div class="board">
+        <div class="column">
+            <div class="column-header">Aula</div>
+            <div class="stack" id="col-lazer">Desc sobre o que é</div>
+        </div>
+        <div class="column">
+            <div class="column-header">Lazer</div>
+            <div class="stack" id="col-lazer">Desc sobre o que é</div>
+        </div>
+        <div class="column">
+            <div class="column-header">Pessoal</div>
+            <div class="stack" id="col-pessoal">Desc sobre o que é</div>
+        </div>
+    </div>
+</body>
+</html>
