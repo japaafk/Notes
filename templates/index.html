@@ -7,8 +7,17 @@
   <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+    <div id="header">
+        <img src="/static/img/book.png" alt="books photo" width="343" height="129">
+    </div>
     <h1>Notinhas</h1>
     <hr>
+    <nav class="navegation-bar">
+    <a href="#" class="active-tab">Início</a>
+    <a href="#" class="tab">Anotações</a>
+    <a href="#" class="tab">Matérias</a>
+    <a href="#" class="tab">Calendário</a>
+    </nav>
     <h2>Anotações</h2>
     <form action="/register" method="post">
         <input autocomplete="off" autofocus placeholder="Deveres, obrigações, etc." type="text">
@@ -18,7 +27,7 @@
             <option>Pessoal</option>
         </select>
         <input type="submit" name="notes">
-    </form> 
+    </form>
     <br>  
     <div class="board">
         <div class="column">
