@@ -1,0 +1,175 @@
+.wraper.weekly-planner {
+  --bg: #151817;
+  --line: #303632;
+  --muted: #a0aaa3;
+  --hour-height: 76px;
+  --columns: 68px repeat(7, minmax(0, 1fr));
+
+  box-sizing: border-box;
+  max-width: 1000px;
+  max-height: 800px;
+  margin: 10px auto;
+  padding: 0;
+  background: var(--bg);
+  color: #e8ece8;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  font: 14px/1.4 "Segoe UI", Arial, sans-serif;
+  color-scheme: dark;
+}
+
+.weekly-planner * { box-sizing: border-box; }
+
+.weekly-planner .planner-caption {
+  margin: 0;
+  padding: 12px 16px;
+  color: var(--muted);
+  font-size: 12px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* ROLAGEM ACONTECENDO DENTRO DA TABELA */
+.weekly-planner .planner-scroll {
+  max-height: 620px;
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #49554c var(--bg);
+}
+
+.weekly-planner .planner-scroll:focus-visible {
+  outline: 2px solid #c4e5ac;
+  outline-offset: -3px;
+}
+
+.weekly-planner .planner-canvas { min-width: 960px; }
+
+/* CABEÇALHO E CONTEÚDO COMPARTILHAM AS MESMAS 8 COLUNAS */
+.weekly-planner .days-week,
+.weekly-planner .daily-routine {
+  display: grid;
+  grid-template-columns: var(--columns);
+  width: 100%;
+}
+
+.weekly-planner .days-week {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+
+.weekly-planner .days-week > span {
+  display: grid;
+  place-items: center;
+  min-height: 62px;
+  padding: 10px 6px;
+  border-left: 0;
+  border-right: 1px solid var(--line);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.weekly-planner .days-week > span:last-child { border-right: 0; }
+
+.weekly-planner .days-week .time-heading {
+  position: sticky;
+  left: 0;
+  z-index: 4;
+  background: var(--bg);
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 400;
+}
+
+.weekly-planner .daily-routine {
+  height: calc(12 * var(--hour-height));
+  margin: 16px 0 24px;
+}
+
+.weekly-planner .time-axis {
+  position: sticky;
+  left: 0;
+  z-index: 2;
+  background: var(--bg);
+  border-right: 1px solid var(--line);
+}
+
+.weekly-planner .time-axis > span {
+  position: absolute;
+  top: calc(var(--hour) * var(--hour-height));
+  right: 10px;
+  width: auto;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+.weekly-planner .day-column {
+  position: relative;
+  min-width: 0;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    var(--line) 0,
+    var(--line) 1px,
+    transparent 1px,
+    transparent var(--hour-height)
+  );
+}
+
+.weekly-planner .day-column:last-child { border-right: 0; }
+.weekly-planner .weekend { background-color: #1b201d; }
+
+/* CONVERTE INÍCIO E DURAÇÃO EM MINUTOS PARA POSIÇÃO E ALTURA EM PIXELS */
+.weekly-planner .event {
+  position: absolute;
+  top: calc(var(--start) * var(--hour-height) / 60);
+  height: calc(var(--duration) * var(--hour-height) / 60 - 4px);
+  left: 5px;
+  right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 9px 7px;
+  border: 1px solid var(--event-border);
+  border-left: 3px solid var(--event-color);
+  border-radius: 5px;
+  background: var(--event-bg);
+  color: var(--event-color);
+  overflow: auto;
+}
+
+.weekly-planner .event-time {
+  display: block;
+  width: auto;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.weekly-planner .event strong {
+  font-size: 12px;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.weekly-planner .study {
+  --event-bg: #322e43;
+  --event-border: #4c435f;
+  --event-color: #c1b6e5;
+}
+
+.weekly-planner .personal {
+  --event-bg: #403528;
+  --event-border: #5c4932;
+  --event-color: #e2bc88;
+}
+
+.weekly-planner .creative {
+  --event-bg: #2b392b;
+  --event-border: #40523c;
+  --event-color: #b6d6a6;
+}
