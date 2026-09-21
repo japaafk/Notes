@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notinhas</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <link rel="stylesheet" href="/static/appointment.css">
+</head>
+<body>
+    <h1>Notinhas</h1>
+    <hr>
+    <nav class="navegation-bar">
+    <a href="/" class="tab">
+        <span>Anotações</span>
+    </a>    
+    <a href="/appointment" class="active-tab">
+        <span>Planejamento</span>
+    </a>
+    </nav> 
+
+     <section class="wraper weekly-planner" aria-label="Organização semanal">
+    <p class="planner-caption" id="planner-help">Horários de exemplo · Em telas pequenas, deslize a grade para os lados.</p>
+    <div class="planner-scroll" tabindex="0" role="region" aria-label="Grade semanal" aria-describedby="planner-help">
+      <div class="planner-canvas">
+        <div class="days-week">
+          <span class="time-heading">Horário</span>
+          <span>Domingo</span>
+          <span>Segunda</span>
+          <span>Terça</span>
+          <span>Quarta</span>
+          <span>Quinta</span>
+          <span>Sexta</span>
+          <span>Sábado</span>
+        </div>
+
+        <div class="daily-routine">
+          <!-- Cada unidade de --hour representa uma hora depois das 08:00. -->
+          <div class="time-axis" aria-hidden="true">
+            <span style="--hour: 0">08:00</span>
+            <span style="--hour: 1">09:00</span>
+            <span style="--hour: 2">10:00</span>
+            <span style="--hour: 3">11:00</span>
+            <span style="--hour: 4">12:00</span>
+            <span style="--hour: 5">13:00</span>
+            <span style="--hour: 6">14:00</span>
+            <span style="--hour: 7">15:00</span>
+            <span style="--hour: 8">16:00</span>
+            <span style="--hour: 9">17:00</span>
+            <span style="--hour: 10">18:00</span>
+            <span style="--hour: 11">19:00</span>
+            <span style="--hour: 12">20:00</span>
+          </div>
+
+          <!-- --start: minutos desde as 08:00; --duration: duração em minutos. -->
+          <section class="day-column weekend" aria-label="Domingo">
+            <div class="event study" style="--start: 60; --duration: 90">
+              <span class="event-time"><time datetime="09:00">09:00</time> – <time datetime="10:30">10:30</time></span>
+              <strong>Aula de matemática</strong>
+            </div>
+          </section>
+          <section class="day-column" aria-label="Segunda">
+            <div class="event personal" style="--start: 120; --duration: 60">
+              <span class="event-time"><time datetime="10:00">10:00</time> – <time datetime="11:00">11:00</time></span>
+              <strong>Academia</strong>
+            </div>
+          </section>
+          <section class="day-column" aria-label="Terça">
+            <div class="event personal" style="--start: 0; --duration: 60">
+              <span class="event-time"><time datetime="08:00">08:00</time> – <time datetime="09:00">09:00</time></span>
+              <strong>Correr</strong>
+            </div>
+          </section>
+          <section class="day-column" aria-label="Quarta">
+            <div class="event study" style="--start: 360; --duration: 120">
+              <span class="event-time"><time datetime="14:00">14:00</time> – <time datetime="16:00">16:00</time></span>
+              <strong>Programação</strong>
+            </div>
+          </section>
+          <section class="day-column" aria-label="Quinta">
+            <div class="event personal" style="--start: 180; --duration: 90">
+              <span class="event-time"><time datetime="11:00">11:00</time> – <time datetime="12:30">12:30</time></span>
+              <strong>Qualidade de vida</strong>
+            </div>
+          </section>
+          <section class="day-column" aria-label="Sexta">
+            <div class="event creative" style="--start: 480; --duration: 60">
+              <span class="event-time"><time datetime="16:00">16:00</time> – <time datetime="17:00">17:00</time></span>
+              <strong>Escrever</strong>
+            </div>
+          </section>
+          <section class="day-column weekend" aria-label="Sábado">
+            <div class="event creative" style="--start: 120; --duration: 90">
+              <span class="event-time"><time datetime="10:00">10:00</time> – <time datetime="11:30">11:30</time></span>
+              <strong>Ler</strong>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
